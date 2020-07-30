@@ -1,0 +1,1 @@
+document.querySelector('p').innerHTML = 'Ai! laurië lantar lassi súrinen,<BR>yéni unótimë ve rámar aldaron!';
