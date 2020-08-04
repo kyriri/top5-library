@@ -1,4 +1,26 @@
+/*
+Colors: https://www.schemecolor.com/wild-miss.php
+*/
+
 body {
-  background-color: oldlace;
+  background-color: #343C51;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 10px;
+}
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 30vh;
+  height: 40vh;
+  background-color: oldlace;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 1vh;
+  margin: 1vh;
+  transition: 0.3s;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
