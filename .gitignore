@@ -1,0 +1,10 @@
+# files related to testing
+main*.js
+test.html
+
+# but not the main js file
+!main.js
+
+# 
+stories.md
+.DS_Store
