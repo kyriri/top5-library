@@ -1,26 +1,136 @@
-/*
-Colors: https://www.schemecolor.com/wild-miss.php
-*/
-
+:root {
+  --toggle-height: 15px;
+}
 body {
-  background-color: #343C51;
+  background-color: rgb(243, 241, 241);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 10px;
+}
+p {
+  padding: 0;
+  margin: 0;
 }
 #card-box {
   display: flex;
   flex-wrap: wrap;
 }
 .card {
-  width: 30vh;
-  height: 40vh;
-  background-color: oldlace;
+  width: 12rem;
+  height: 16rem;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
-  padding: 1vh;
-  margin: 1vh;
+  padding: 1rem;
+  margin: 0.5rem;
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* CARD NAME */
+.card-name {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+/* CARD CONTENT */
+.card-content {
+  overflow: auto;
+}
+.quotation {
+  position: relative;
+}
+.text {
+  padding-top: 10px;
+  text-align: justify;
+  position: sticky;
+  z-index: 3;
+}
+.quote {
+  color: rgba(173, 171, 171, .6);
+  font-size: 5rem;
+  overflow: hidden;
+  position: absolute;
+}
+.open {
+  top: -0.5rem;
+  left: -0.1rem;
+  z-index: 2;
+}
+.close {
+  bottom: -0.8rem;
+  right: 0;
+  z-index: 1;
+}
+
+/* CARD FOOTER */
+.card-footer {
+  font-family: Arial, Helvetica, sans-serif;
+  color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4px;
+}
+.card-status {
+  border-top: 2px solid lightgray;
+  width: 75%;
+  padding-top: 4px;
+  text-transform: uppercase;
+}
+.toggle-button {
+  align-self: flex-end;
+}
+/* adapted from https://www.w3schools.com/howto/howto_css_switch.asp */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: calc(1.76 * var(--toggle-height));
+  height: var(--toggle-height);
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--toggle-height);
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: calc(0.76 * var(--toggle-height));
+  width: calc(0.76 * var(--toggle-height));
+  left: calc(0.118 * var(--toggle-height));
+  bottom: calc(0.118 * var(--toggle-height));
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(calc(0.76 * var(--toggle-height)));
+  -ms-transform: translateX(calc(0.76 * var(--toggle-height)));
+  transform: translateX(calc(0.76 * var(--toggle-height)));
 }

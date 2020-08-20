@@ -1,4 +1,4 @@
-document.getElementsByTagName('p')[0].innerHTML = 'Ai! laurië lantar lassi súrinen,<BR>yéni unótimë ve rámar aldaron!';
+// document.getElementsByTagName('p')[0].innerHTML = 'Ai! laurië lantar lassi súrinen,<BR>yéni unótimë ve rámar aldaron!';
 
 // sample library for development purposes
 

@@ -1,4 +1,4 @@
-document.getElementsByTagName('p')[1].innerHTML = 'Galadriel';
+// document.getElementsByTagName('p')[1].innerHTML = 'Galadriel';
 
 const catalog = sample;
 
