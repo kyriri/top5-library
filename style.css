@@ -50,6 +50,9 @@ p {
   text-transform: uppercase;
   padding: 0.1rem;
 }
+.comment {
+  font-family: 'Nanum Pen Script', 'Lucida Sans', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .quotation {
   position: relative;
 }

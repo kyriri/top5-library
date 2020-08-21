@@ -51,6 +51,7 @@ function createCard(index) {
 }
 
 function renderCards() {
+  document.getElementById('card-box').innerHTML = '';
   for (let i = 0; i < catalog.length; i += 1)
     document.getElementById('card-box').innerHTML += createCard(i);
 }

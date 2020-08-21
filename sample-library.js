@@ -20,6 +20,15 @@ const sample = [
     The chair was a simple Scandinavian design of chrome and white leather. Beautiful, clean, and silent, with not an ounce of warmth, like fine rain falling under the midnight sun.`,
     read: true,
   },{
+    id: 6,
+    title: `Think like a programmer: An introduction to creative problem solving`,
+    author: `Anton Spraul`, 
+    language: `English`, 
+    category: `technical`,
+    comment: `Recommended by The Odin Project`,
+    quotes: ``,
+    read: false,
+  },{
     id: 2,
     title: `The Catcher in the Rye`,
     author: ``, 
@@ -37,15 +46,6 @@ const sample = [
     comment: `From Fabi's bookshelf`,
     quotes: `Blanca tiene por lo menos algo de común conmigo: también es una triste con vocación de alegre`,
     read: true,
-  },{
-    id: 6,
-    title: `Think like a programmer: An introduction to creative problem solving`,
-    author: `Anton Spraul`, 
-    language: `English`, 
-    category: `technical`,
-    comment: `Recommended by The Odin Project`,
-    quotes: ``,
-    read: false,
   },{
     id: 11,
     title: `The biggest bluff`,
