@@ -4,7 +4,7 @@
 
 const sample = [
   {
-    id: 1,
+    type: `book`,
     title: `Colorless Tsukuru Tazaki and his years of pilgrimage`,
     author: `Haruki Murakami`, 
     language: `Japanese`, 
@@ -20,7 +20,7 @@ const sample = [
     The chair was a simple Scandinavian design of chrome and white leather. Beautiful, clean, and silent, with not an ounce of warmth, like fine rain falling under the midnight sun.`,
     read: true,
   },{
-    id: 6,
+    type: `book`,
     title: `Think like a programmer: An introduction to creative problem solving`,
     author: `Anton Spraul`, 
     language: `English`, 
@@ -29,7 +29,16 @@ const sample = [
     quotes: ``,
     read: false,
   },{
-    id: 2,
+    type: `movie`,
+    title: `If cats disappeared from the world`,
+    author: ` Akira Nagai`, 
+    language: `Japanese`, 
+    category: `urban fantasy`,
+    comment: `that movie on the flight to Istanbul`,
+    quotes: ``,
+    read: true,
+  },{
+    type: `book`,
     title: `The Catcher in the Rye`,
     author: ``, 
     language: `English`, 
@@ -38,7 +47,7 @@ const sample = [
     quotes: `"I'm not trying to tell you", he said, "that only educated and scholarly men are able to contribute something valuable to the world. It's not so. But I do say that educated and scholarly men, if they're brilliant and creative to begin with — which, unfortunately, is rarely the case — tend to leave infinitely more valuable records behind them than men do who are _merely_ brilliant and creative. They tend to express themselves more clearly, and they usually have a passion for following their thoughts through to the end. (...)`,
     read: true,
   },{
-    id: 3,
+    type: `book`,
     title: `La Tregua`,
     author: `Mario Benedetti`, 
     language: `Spanish`, 
@@ -47,7 +56,7 @@ const sample = [
     quotes: `Blanca tiene por lo menos algo de común conmigo: también es una triste con vocación de alegre`,
     read: true,
   },{
-    id: 11,
+    type: `book`,
     title: `The biggest bluff`,
     author: `Maria Konnikova`, 
     language: `English`, 

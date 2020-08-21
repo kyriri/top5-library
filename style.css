@@ -4,7 +4,7 @@
 body {
   background-color: rgb(243, 241, 241);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 10px;
+  font-size: 12px;
 }
 p {
   padding: 0.1rem;
@@ -15,30 +15,35 @@ p {
   flex-wrap: wrap;
 }
 .card {
-  width: 12rem;
-  height: 16rem;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 5px;
-  padding: 1rem;
+  background-color: #97341C;
+  padding: 0.5rem;
   margin: 0.5rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  display: flex;
-  flex-direction: column;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-/* CARD NAME */
-.card-name {
-  font-size: 1rem;
-  font-weight: bold;
-  padding-bottom: 10px;
+.card-content {
+  width: 12rem;
+  height: 16rem;
+  background-color: #FFFFFF;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
 }
 
-/* CARD CONTENT */
-.card-content {
+/* CARD HEAD */
+.card-head {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+/* CARD BODY */
+.card-body {
   flex-grow: 1;
   overflow: auto;
 }
@@ -79,8 +84,8 @@ p {
   z-index: 1;
 }
 
-/* CARD FOOTER */
-.card-footer {
+/* CARD FOOT */
+.card-foot {
   display: flex;
   justify-content: space-between;
   padding-top: 4px;
