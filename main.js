@@ -39,10 +39,10 @@ function createCard(index) {
       `) : ''}
     </div>
     <div class='card-footer'>
-      <div class='card-status'>Not read</div>
+      <div class='card-status'>${catalog[index].read ? 'Read' : 'Not read'}</div>
       <div class='toggle-button'>
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" ${catalog[index].read ? 'checked' : ''}>
           <span class="slider"></span>
         </label>          
       </div>
