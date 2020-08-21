@@ -39,7 +39,7 @@ const sample = [
     read: true,
   },{
     type: `bokk`,
-    title: `The Catcher in the Rye`,
+    title: `The catcher in the rye`,
     author: ``, 
     language: `English`, 
     category: `classics`,
@@ -48,7 +48,7 @@ const sample = [
     read: true,
   },{
     type: `book`,
-    title: `La Tregua`,
+    title: `La tregua`,
     author: `Mario Benedetti`, 
     language: `Spanish`, 
     category: `holiday read`,
