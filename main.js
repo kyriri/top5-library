@@ -4,7 +4,7 @@ const catalog = sample;
 
 function createCard(index) {
   return `
-  <article class='card'>
+  <article class='card ${catalog[index].type}'>
     <div class='card-content'>
       <div class='card-head'>${catalog[index].title}</div>
       <div class='card-body'>
@@ -33,18 +33,18 @@ function createCard(index) {
         `) : ''}
         ${catalog[index].quotes ? (`
           <div class='quotation'>
-            <div class='quote open'>“</div>
-            <div class='text'>${catalog[index].quotes}</div>
-            <div class='quote close'>„</div>
+            <div class='quote-mark open'>“</div>
+            <div class='text'>${' &nbsp;'.repeat(4)} ${catalog[index].quotes}</div>
+            <div class='quote-mark close'>„</div>
           </div>
         `) : ''}
       </div>
       <div class='card-foot'>
         <div class='card-status'>${catalog[index].type} &nbsp;-&nbsp;  ${catalog[index].read ? 'Read' : 'Not read'}</div>
         <div class='toggle-button'>
-          <label class="switch">
-            <input type="checkbox" ${catalog[index].read ? 'checked' : ''}>
-            <span class="slider"></span>
+          <label class='switch'>
+            <input type='checkbox' ${catalog[index].read ? 'checked' : ''}>
+            <span class='slider ${catalog[index].type}'></span>
           </label>          
         </div>
       </div>

@@ -38,7 +38,7 @@ const sample = [
     quotes: ``,
     read: true,
   },{
-    type: `book`,
+    type: `bokk`,
     title: `The Catcher in the Rye`,
     author: ``, 
     language: `English`, 

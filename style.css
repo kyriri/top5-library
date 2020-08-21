@@ -15,7 +15,7 @@ p {
   flex-wrap: wrap;
 }
 .card {
-  background-color: #97341C;
+  background-color: #CCCCCC;
   padding: 0.5rem;
   margin: 0.5rem;
   border-radius: 0.4rem;
@@ -29,7 +29,7 @@ p {
   width: 12rem;
   height: 16rem;
   background-color: #FFFFFF;
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 0.2rem;
   display: flex;
   flex-direction: column;
@@ -60,6 +60,7 @@ p {
 }
 .quotation {
   position: relative;
+  margin-top: 0.3rem;
 }
 .text {
   padding-top: 10px;
@@ -67,14 +68,15 @@ p {
   position: sticky;
   z-index: 3;
 }
-.quote {
+.quote-mark
+ {
   color: rgba(173, 171, 171, .6);
   font-size: 5rem;
   overflow: hidden;
   position: absolute;
 }
 .open {
-  top: -0.5rem;
+  top: -0.7rem;
   left: -0.1rem;
   z-index: 2;
 }
@@ -126,7 +128,7 @@ p {
   right: 0;
   bottom: 0;
   border-radius: var(--toggle-height);
-  background-color: #ccc;
+  background-color: #2196F3;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -143,13 +145,20 @@ p {
   transition: .4s;
 }
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #CCCCCC;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #CCCCCC;
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(calc(0.76 * var(--toggle-height)));
   -ms-transform: translateX(calc(0.76 * var(--toggle-height)));
   transform: translateX(calc(0.76 * var(--toggle-height)));
 }
+
+/* CARD COLORS ACCORDING TO THEIR TYPES */
+.book { background-color: #97341C;}
+.album { background-color: #41600B;}
+.movie { background-color: #59266D;}
+.play { background-color: #0C5679;}
+.series { background-color: #C3D2AE;}
