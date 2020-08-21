@@ -7,26 +7,36 @@ function createCard(index) {
     <article class='card'>
     <div class='card-name'>${catalog[index].title}</div>
     <div class='card-content'>
-      <p class='author'>
-        <span class='tag'>by</span> 
-        ${catalog[index].author}
-      </p>
-      <p class='genre'>
-        <span class='tag'>Genre</span> 
-        ${catalog[index].category}
-      </p>
-      <p class='language'>
-        <span class='tag'>Original language</span> 
-        ${catalog[index].language}
-      </p>
-      <p class='comment'>
-        (${catalog[index].comment})
-      </p>
-      <div class='quotation'>
-        <div class='quote open'>“</div>
-        <div class='text'>${catalog[index].quotes}</div>
-        <div class='quote close'>„</div>
-      </div>
+      ${catalog[index].author ? (`
+        <p class='author'>
+          <span class='tag'>by</span> 
+          ${catalog[index].author}
+        </p>
+      `) : ''}
+      ${catalog[index].category ? (`
+        <p class='genre'>
+          <span class='tag'>Genre</span> 
+          ${catalog[index].category}
+        </p>
+      `) : ''}
+      ${catalog[index].language ? (`
+        <p class='language'>
+          <span class='tag'>Original language</span> 
+          ${catalog[index].language}
+        </p>
+      `) : ''}
+      ${catalog[index].comment ? (`
+        <p class='comment'>
+          (${catalog[index].comment})
+        </p>
+      `) : ''}
+      ${catalog[index].quotes ? (`
+        <div class='quotation'>
+          <div class='quote open'>“</div>
+          <div class='text'>${catalog[index].quotes}</div>
+          <div class='quote close'>„</div>
+        </div>
+      `) : ''}
     </div>
     <div class='card-footer'>
       <div class='card-status'>Not read</div>
