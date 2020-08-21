@@ -14,8 +14,8 @@ function createCard(index) {
         </p>
       `) : ''}
       ${catalog[index].category ? (`
-        <p class='genre'>
-          <span class='tag'>Genre</span> 
+        <p class='category'>
+          <span class='tag'>Category</span> 
           ${catalog[index].category}
         </p>
       `) : ''}

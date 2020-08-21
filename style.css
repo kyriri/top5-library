@@ -39,6 +39,7 @@ p {
 
 /* CARD CONTENT */
 .card-content {
+  flex-grow: 1;
   overflow: auto;
 }
 .tag {
