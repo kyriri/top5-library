@@ -1,5 +1,5 @@
 :root {
-  --toggle-height: 15px;
+  --toggle-height: 1.5em;
 }
 html {
   font-size: 10px;
@@ -109,6 +109,8 @@ p {
 }
 .toggle-button {
   align-self: flex-end;
+  width: 2.64em;
+  height: 1.5em;
   padding-left: 0.2em;
 }
 /* adapted from https://www.w3schools.com/howto/howto_css_switch.asp */
@@ -116,8 +118,8 @@ p {
 .switch {
   position: relative;
   display: inline-block;
-  width: calc(1.76 * var(--toggle-height));
-  height: var(--toggle-height);
+  width: 100%;
+  height: 100%;
 }
 /* Hide default HTML checkbox */
 .switch input {
