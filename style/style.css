@@ -2,6 +2,7 @@
   --toggle-height: 1.5em;
   --base-font-serif: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   --base-font-sansserif: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --base-font-comment: 'Nothing You Could Do', 'Lucida Sans', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 html {
   font-size: 10px;
@@ -97,8 +98,9 @@ button.delete {
   padding: 0.15em;
 }
 .comment {
-  font-family: 'Nanum Pen Script', 'Lucida Sans', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: var(--base-font-comment);
   font-size: 1em;
+  padding-top: 0.8em;
 }
 .quotation {
   position: relative;
