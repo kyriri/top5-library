@@ -36,7 +36,7 @@ p {
   flex-direction: column;
   transition: 0.5s;
 }
-.opened {
+.opened { /* added on card-content level */
   width: 24rem;
   height: 32rem;
   font-size: 1.5rem;
@@ -114,20 +114,20 @@ p {
   padding-left: 0.2em;
 }
 /* adapted from https://www.w3schools.com/howto/howto_css_switch.asp */
-/* The switch - the box around the slider */
+/* the switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
   width: 100%;
   height: 100%;
 }
-/* Hide default HTML checkbox */
+/* hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-/* The slider */
+/* the slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -164,9 +164,30 @@ input:checked + .slider:before {
   transform: translateX(calc(0.76 * var(--toggle-height)));
 }
 
-/* CARD COLORS ACCORDING TO THEIR TYPES */
-.album  { background-color: #41600B; }
-.book   { background-color: #97341C; }
-.movie  { background-color: #59266D; }
-.play   { background-color: #0C5679; }
-.series { background-color: #C3D2AE; }
+/* CARD COLORS ACCORDING TO THEIR TYPES 
+   https://www.schemecolor.com/predicted-rainbow.php */
+.album  { background-color: #734C9F; }
+.book   { background-color: #0198CF; }
+.movie  { background-color: #5DBA47; }
+.play   { background-color: #F8E429; }
+.series { background-color: #FBAA4E; }
+
+.form-field {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.required {
+  color: crimson;
+  position: relative;
+  left: -0.25em;
+}
+label.tag {
+  margin-right: .4em;
+  white-space: nowrap;
+}
+input {
+  min-width: 1em;
+  flex: 2 2 100%;
+}

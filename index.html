@@ -9,7 +9,93 @@
   <body>
     <main id='card-box'>
       <article class='card'>
-        Somthing went wrong... the script is not loading the data!
+        Something went wrong... the script is not loading any data!
+      </article>
+
+      <article class='card'>
+        <div class='card-content opened'>
+          <div class='card-head'>
+            New card
+          </div>
+          <div class='card-body'>
+
+            <div class='form-field'>
+              <label class='tag' for='title'>Title</label>
+              <span class='required'>*</span>
+              <input type='text' id='form-title' name='title' required>
+            </div>
+            <br>
+
+            <div class='form-field'>
+              <label class='tag' for='type'>Type</label>
+              <span class='required'>*</span>
+              <input type='text' list='types' id='form-type' name='type' required>
+              <datalist id='types'>
+                <option>album</option>
+                <option>book</option>
+                <option>movie</option>
+                <option>play</option>
+                <option>series</option>
+              </datalist>
+            </div>
+            <br>
+
+            <div class='form-field'>
+              <label class='tag' for='author'>Author</label> 
+              <input type='text' id='form-author' name='author'>
+            </div>
+            <br>
+
+            <label class='tag'>Already read/seen?</label> 
+            <input type='checkbox' id='form-read' name='read'><br><br>
+
+            <div class='form-field'>
+              <label class='tag'>Category</label> 
+              <input type='text' list='categories' id='form-category' name='category'>
+              <datalist id='categories'>
+                <option>beach read</option>
+                <option>biography</option>
+                <option>classic</option>
+                <option>comedy</option>
+                <option>detective</option>
+                <option>documentary</option>
+                <option>drama</option>
+                <option>musical</option>
+                <option>non-fiction</option>
+                <option>romance</option>
+                <option>sci-fi</option>
+                <option>thriller</option>
+                <option>technical</option>
+                <option>travel</option>
+              </datalist>
+            </div>
+            <br>
+
+            <div class='form-field'>
+              <label class='tag'>Original language</label> 
+              <input type='text' list='languages' id='form-language' name='language'>
+              <datalist id='languages'>
+                <option>English</option>
+                <option>Japanese</option>
+                <option>Spanish</option>
+              </datalist>
+            </div>
+            <br>
+
+            <label class='tag'>Comments</label><BR>
+            <textarea type='text' id='form-comment' name='comment'>
+              Why are you interested in this? Where have you first heard of it?
+            </textarea><br><br>
+
+            <label class='tag'>Quotations</label><BR> 
+            <textarea type='text' id='form-quotes' name='quotes'>
+              Passages to remember, a favorite scene, etc
+            </textarea><br><br>
+          </div>
+          <div class='card-foot'>
+            <input type='submit' value='Save'>
+          </div>
+        </div>
       </article>
     </main>
     <script src='sample-library.js'></script>
