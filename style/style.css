@@ -43,6 +43,39 @@ p {
   height: 32rem;
   font-size: 1.5rem;
 }
+
+/* CARD BUTTONS */
+.card-buttons {
+  position: relative;
+}
+button {
+  background-color: #FFFFFF;
+  opacity: 0;
+  padding: .1em;
+  margin: 0;
+  border: none;
+  border-radius: .2em;
+  position: absolute;
+}
+.card:hover button {
+  opacity: .5;
+}
+button:hover {
+  background-color: rgb(252, 235, 203);
+}
+/* imgs source: https://www.iconarchive.com/ */
+button img {
+  height: 1.2em; /* why u no grow ?? */
+} 
+button.edit {
+  top: 0;
+  right: 0;
+}
+button.delete {
+  top: 1.7em;
+  right: 0;
+}
+
 /* CARD HEAD */
 .card-head {
   font-size: 1.6em;

@@ -5,7 +5,11 @@ const catalog = sample;
 function createCard(index) {
   return `
   <article class='card ${catalog[index].type}'>
-    <div class='card-content'>
+    <div class='card-content ${index === 0 ? 'opened' : ''}'>
+      <div class='card-buttons'>
+        <button class='btn edit' type='button'><img src='./style/icon-edit.png' alt='edit card'></button>
+        <button class='btn delete' type='button'><img src='./style/icon-trash.png' alt='delete card'></button>
+      </div>
       <div class='card-head'>${catalog[index].title}</div>
       <div class='card-body'>
         ${catalog[index].author ? (`
@@ -53,7 +57,7 @@ function createCard(index) {
 }
 
 function renderCards() {
-  //document.getElementById('card-box').innerHTML = '';
+  document.getElementById('card-box').innerHTML = '';
   for (let i = 0; i < catalog.length; i += 1)
     document.getElementById('card-box').innerHTML += createCard(i);
 }
