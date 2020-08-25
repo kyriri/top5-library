@@ -44,7 +44,7 @@ function createCard(index) {
         `) : ''}
       </div>
       <div class='card-foot'>
-        <div class='card-status'>${catalog[index].type} &nbsp;-&nbsp;  ${catalog[index].read ? 'Read' : 'Not read'}</div>
+        <div class='card-status'>${catalog[index].type} &nbsp;-&nbsp;  ${catalog[index].read ? '' : 'Not'} ${chooseStatusWording(catalog[index].type)}</div>
         <div class='toggle-button'>
           <label class='switch'>
             <input type='checkbox' ${catalog[index].read ? 'checked' : ''}>
@@ -54,6 +54,26 @@ function createCard(index) {
       </div>
     </div>
   </article>`;
+}
+
+function chooseStatusWording(type) {
+  let wording;
+  switch(type) {
+    case 'album':
+      wording = 'listened';
+      break;
+    case 'book':
+      wording = 'read';
+      break;
+    case 'movie':
+    case 'play':
+    case 'series':
+      wording = 'watched';
+      break;
+    default:
+      wording = 'enjoyed'
+  }
+  return wording;
 }
 
 function renderCards() {
