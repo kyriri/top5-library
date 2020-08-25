@@ -1,10 +1,12 @@
 :root {
   --toggle-height: 1.5em;
+  --base-font-serif: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --base-font-sansserif: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 html {
   font-size: 10px;
   background-color: rgb(243, 241, 241);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: var(--base-font-serif);
 }
 p {
   padding: 0.1rem;
@@ -176,7 +178,6 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  justify-content: space-between;
 }
 .required {
   color: crimson;
@@ -189,5 +190,18 @@ label.tag {
 }
 input {
   min-width: 1em;
+  font: 400 .7em var(--base-font-sansserif);
+  border: 1px solid lightgray;
+  border-radius: .15em;
   flex: 2 2 100%;
+}
+textarea {
+  font: 400 1em var(--base-font-sansserif);
+  font-size: .7em;
+  text-align: left;
+  height: 6em;
+  margin-top: .2em;
+  border: 1px solid lightgray;
+  border-radius: .15em;
+  width: calc(100% - 6px);
 }

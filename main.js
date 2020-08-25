@@ -10,25 +10,25 @@ function createCard(index) {
       <div class='card-body'>
         ${catalog[index].author ? (`
           <p class='author'>
-          <span class='tag'>by</span> 
-          ${catalog[index].author}
+            <span class='tag'>by</span> 
+            ${catalog[index].author}
           </p>
         `) : ''}
         ${catalog[index].category ? (`
           <p class='category'>
-          <span class='tag'>Category</span> 
-          ${catalog[index].category}
+            <span class='tag'>Category</span> 
+            ${catalog[index].category}
           </p>
         `) : ''}
         ${catalog[index].language ? (`
           <p class='language'>
-          <span class='tag'>Original language</span> 
-          ${catalog[index].language}
+            <span class='tag'>Original language</span> 
+            ${catalog[index].language}
           </p>
         `) : ''}
         ${catalog[index].comment ? (`
           <p class='comment'>
-          (${catalog[index].comment})
+            (${catalog[index].comment})
           </p>
         `) : ''}
         ${catalog[index].quotes ? (`
@@ -53,7 +53,7 @@ function createCard(index) {
 }
 
 function renderCards() {
-  document.getElementById('card-box').innerHTML = '';
+  //document.getElementById('card-box').innerHTML = '';
   for (let i = 0; i < catalog.length; i += 1)
     document.getElementById('card-box').innerHTML += createCard(i);
 }

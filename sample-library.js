@@ -10,14 +10,23 @@ const sample = [
     language: `Japanese`, 
     category: `holiday read`,
     comment: `That book I saw at the Bali hostel, and then at the Bangkok hostel`,
-    quotes: `'It's a fascinating story, but hard to believe,' Haida admitted. 
-    'Because there's no logical explanation?'
-    'Exactly.'
-    'No way to prove it.'
-    'The only way you know if it's real or not, the only way to prove it, is by actually making the deal. Isn't that how it works?'
-    Midorikawa nodded. 'Exactly. Unless you take the leap, you can't prove it. And once you actually make the leap, there's no need to prove it anymore. There's no middle ground.(...)'
-    
-    The chair was a simple Scandinavian design of chrome and white leather. Beautiful, clean, and silent, with not an ounce of warmth, like fine rain falling under the midnight sun.`,
+    quotes: `— 'It's a fascinating story, but hard to believe,' Haida admitted. 
+    <BR>— 'Because there's no logical explanation?'
+    <BR>— 'Exactly.'
+    <BR>— 'No way to prove it.'
+    <BR>— 'The only way you know if it's real or not, the only way to prove it, is by actually making the deal. Isn't that how it works?'
+    <BR>Midorikawa nodded. 'Exactly. Unless you take the leap, you can't prove it. And once you actually make the leap, there's no need to prove it anymore. There's no middle ground.(...)'
+    <BR>
+    <BR>The chair was a simple Scandinavian design of chrome and white leather. Beautiful, clean, and silent, with not an ounce of warmth, like fine rain falling under the midnight sun.`,
+    read: true,
+  },{
+    type: `bokk`,
+    title: `The catcher in the rye`,
+    author: ``, 
+    language: `English`, 
+    category: `classics`,
+    comment: ``,
+    quotes: `"I'm not trying to tell you", he said, "that only educated and scholarly men are able to contribute something valuable to the world. It's not so. But I do say that educated and scholarly men, if they're brilliant and creative to begin with — which, unfortunately, is rarely the case — tend to leave infinitely more valuable records behind them than men do who are _merely_ brilliant and creative. They tend to express themselves more clearly, and they usually have a passion for following their thoughts through to the end. (...)`,
     read: true,
   },{
     type: `book`,
@@ -36,15 +45,6 @@ const sample = [
     category: `urban fantasy`,
     comment: `that movie on the flight to Istanbul`,
     quotes: ``,
-    read: true,
-  },{
-    type: `bokk`,
-    title: `The catcher in the rye`,
-    author: ``, 
-    language: `English`, 
-    category: `classics`,
-    comment: ``,
-    quotes: `"I'm not trying to tell you", he said, "that only educated and scholarly men are able to contribute something valuable to the world. It's not so. But I do say that educated and scholarly men, if they're brilliant and creative to begin with — which, unfortunately, is rarely the case — tend to leave infinitely more valuable records behind them than men do who are _merely_ brilliant and creative. They tend to express themselves more clearly, and they usually have a passion for following their thoughts through to the end. (...)`,
     read: true,
   },{
     type: `book`,
