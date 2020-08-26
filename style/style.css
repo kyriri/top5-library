@@ -6,25 +6,23 @@
 }
 html {
   font-size: 10px;
-  background-color: rgb(243, 241, 241);
   font-family: var(--base-font-serif);
+}
+body {
+  background-color: rgb(243, 241, 241);
+  margin: 0;
+  padding: 0;
 }
 p {
   padding: 0.1rem;
   margin: 0;
 }
 
-/* PAGE HEADER */
-header {
-  text-align: center;
-}
-.button-panel {
-  display: flex;
-  justify-content: center;
-}
+
 
 /* CARDS */
 #card-box {
+  padding: 0 1rem 5rem 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -272,20 +270,51 @@ textarea {
   color: #000000;
   opacity: .3;
 }
+/* PAGE HEADER */
+header {
+  text-align: center;
+}
+h2 {
+  font-family: var(--base-font-sansserif);
+  font-weight: normal;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  padding: 0 0 1rem 0;
+}
+nav {
+  width: 100%;
+  background-color: #cacaca;
+  font-family: var(--base-font-sansserif);
+  padding: .4rem;
+  margin-bottom: .4rem;
+  /* position: fixed; */
+  z-index: 99;
+  box-shadow: 0 .5rem .5rem 0 #cccccc50;
+}
+.button-panel {
+  display: flex;
+  justify-content: center;
+}
 
 /* PAGE FOOTER */
 footer {
-  font-size: 1.6vh;
+  width: 100%;
+  background-color: #cacaca;
   color: #5e6985;
+  font-family: var(--base-font-sansserif);
+  font-size: .8rem;
   text-align: center;
-  margin-top: 1.6vh;
-  position: relative;
+  padding: .3rem 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  box-shadow: 0 -0.5rem .5rem 0 #cccccc50;
 }
 svg {
-  width: 4.5vh;
+  width: 3rem;
   position: absolute;
-  top: 0;
-  right: 0;
+  bottom: .5rem;
+  right: .5rem;
   opacity: 50%;
 }
 svg:hover {

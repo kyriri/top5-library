@@ -9,7 +9,7 @@ const sample = [
     author: `Haruki Murakami`, 
     language: `Japanese`, 
     category: `beach read`,
-    comment: `that book I saw everywhere on my trip to Thailand`,
+    comment: `that book I saw everywhere during my trip to Thailand`,
     quotes: `— 'It's a fascinating story, but hard to believe,' Haida admitted. 
       <BR>— 'Because there's no logical explanation?'
       <BR>— 'Exactly.'
