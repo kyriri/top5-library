@@ -7,8 +7,8 @@ function createCard(index) {
   <article class='card ${catalog[index].type}'>
     <div class='card-content ${index === 0 ? '' : ''}'>
       <div class='card-buttons'>
-        <button class='btn edit' type='button'><img src='./style/icon-edit.png' alt='edit card'></button>
-        <button class='btn delete' type='button'><img src='./style/icon-trash.png' alt='delete card'></button>
+        <button class='card-btn edit' type='button'><img src='./style/icon-edit.png' alt='edit card'></button>
+        <button class='card-btn delete' type='button'><img src='./style/icon-trash.png' alt='delete card'></button>
       </div>
       <div class='card-head'>${catalog[index].title}</div>
       <div class='card-body'>

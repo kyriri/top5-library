@@ -13,6 +13,17 @@ p {
   padding: 0.1rem;
   margin: 0;
 }
+
+/* PAGE HEADER */
+header {
+  text-align: center;
+}
+.button-panel {
+  display: flex;
+  justify-content: center;
+}
+
+/* CARDS */
 #card-box {
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +60,7 @@ p {
 .card-buttons {
   position: relative;
 }
-button {
+.card-btn {
   background-color: #FFFFFF;
   opacity: 0;
   padding: .1em;
@@ -58,21 +69,21 @@ button {
   border-radius: .2em;
   position: absolute;
 }
-.card:hover button {
+.card:hover .card-btn {
   opacity: .5;
 }
-button:hover {
+.card-btn:hover {
   background-color: rgb(252, 235, 203);
 }
 /* imgs source: https://www.iconarchive.com/ */
-button img {
+.card-btn img {
   height: 1.2em; /* why u no grow ?? */
 } 
-button.edit {
+.card-btn.edit {
   top: 0;
   right: 0;
 }
-button.delete {
+.card-btn.delete {
   top: 1.7em;
   right: 0;
 }
@@ -209,6 +220,7 @@ input:checked + .slider:before {
 .play   { background-color: #F8E429; }
 .series { background-color: #FBAA4E; }
 
+/* NEW CARD FORM */
 .form-field {
   display: flex;
   flex-direction: row;
@@ -259,4 +271,34 @@ textarea {
   font-style: italic;
   color: #000000;
   opacity: .3;
+}
+
+/* PAGE FOOTER */
+footer {
+  font-size: 1.6vh;
+  color: #5e6985;
+  text-align: center;
+  margin-top: 1.6vh;
+  position: relative;
+}
+svg {
+  width: 4.5vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 50%;
+}
+svg:hover {
+  opacity: 100%;
+}
+path {
+  fill: #5e6985;
+}
+a, a:active, a:visited {
+  color: #5e6985;
+  text-decoration: none;
+}
+a:hover {
+    color: black;
+    text-shadow: 0 0 0.8vh #d0abb5;
 }

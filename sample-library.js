@@ -9,7 +9,7 @@ const sample = [
     author: `Haruki Murakami`, 
     language: `Japanese`, 
     category: `beach read`,
-    comment: `That book I saw at the Bali hostel, and then at the Bangkok hostel`,
+    comment: `that book I saw everywhere on my trip to Thailand`,
     quotes: `— 'It's a fascinating story, but hard to believe,' Haida admitted. 
       <BR>— 'Because there's no logical explanation?'
       <BR>— 'Exactly.'
@@ -43,7 +43,7 @@ const sample = [
     author: `Anton Spraul`, 
     language: `English`, 
     category: `technical`,
-    comment: `Recommended by The Odin Project`,
+    comment: `recommended by The Odin Project`,
     quotes: ``,
     read: false,
   },{    
@@ -61,7 +61,7 @@ const sample = [
     author: `Mario Benedetti`, 
     language: `Spanish`, 
     category: `holiday read`,
-    comment: `From Fabi's bookshelf`,
+    comment: `from Fabi's bookshelf`,
     quotes: `Blanca tiene por lo menos algo de común conmigo: también es una triste con vocación de alegre`,
     read: true,
   },{
@@ -83,7 +83,7 @@ const sample = [
     author: `Maria Konnikova`, 
     language: `English`, 
     category: `non-fiction`,
-    comment: `The journalist who became a poker champion on that NYT article`,
+    comment: `the journalist who became a poker champion on that NYT article`,
     quotes: ``,
     read: false,
   },{
