@@ -267,6 +267,7 @@ input:checked + .slider:before {
 .movie  { background-color: #5DBA47; }
 .play   { background-color: #F8E429; }
 .series { background-color: #FBAA4E; }
+.checked { opacity: 50%; }
 
 /* NEW CARD FORM */
 .form-field {

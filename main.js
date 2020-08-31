@@ -3,8 +3,9 @@
 const catalog = sample;
 
 function createCard(index) {
+  let cardColor = catalog[index].type;
   return `
-  <article class='card ${catalog[index].type}'>
+  <article class='card ${cardColor}'>
     <div class='card-content ${index === 0 ? '' : ''}'>
       <div class='card-buttons'>
         <button class='card-btn edit' type='button'><img src='./style/icon-edit.png' alt='edit card'></button>
@@ -48,7 +49,7 @@ function createCard(index) {
         <div class='toggle-button'>
           <label class='switch'>
             <input type='checkbox' ${catalog[index].read ? 'checked' : ''}>
-            <span class='slider ${catalog[index].type}'></span>
+            <span class='slider ${cardColor}'></span>
           </label>          
         </div>
       </div>
@@ -80,6 +81,21 @@ function renderCards() {
   document.getElementById('card-box').innerHTML = '';
   for (let i = 0; i < catalog.length; i += 1)
     document.getElementById('card-box').innerHTML += createCard(i);
+  
+  // attach an event listener to all card-footer toggle buttons
+  let toggleButtons = document.querySelectorAll('.switch > input');
+  toggleButtons.forEach(card => card.addEventListener('change', changeCardColor));
+}
+
+function changeCardColor(e) {
+  console.log(e);
+  // retrieve background color
+  let element = e.originalTarget.nextElementSibling;
+  console.log(`color: ${getComputedStyle(element).backgroundColor}`);
+  // if read == true, increase card lightness by the equivalent of 50% alpha
+  // if read == false, decrease card lightness by the same measure
+  // convert from rgba to rgb (if needed)
+  // change background color (card and toggle button)
 }
 
 // make nav bar sticky onscroll
@@ -89,5 +105,5 @@ let sticky = header.offsetTop;
 window.onscroll = () => window.pageYOffset > sticky ? 
   header.classList.add('sticky') : header.classList.remove('sticky');
 
-  
+
 renderCards();
