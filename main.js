@@ -82,11 +82,26 @@ function renderCards() {
   for (let i = 0; i < catalog.length; i += 1)
     document.getElementById('card-box').innerHTML += createCard(i);
   
-  // attach an event listener to all card-footer toggle buttons
+  // make cards change size on click
+  let cards = document.querySelectorAll('#card-box > *');
+  cards.forEach(card => card.addEventListener('click', changeCardSize));
+
+  // make cards change color when toggle button is clicked
   let toggleButtons = document.querySelectorAll('.switch > input');
   toggleButtons.forEach(card => card.addEventListener('change', changeCardColor));
 }
+function changeCardSize() {
+  // if card was big, make it small
+  if (this.children[0].classList.contains('opened')) {
+    this.children[0].classList.remove('opened');
+  } else {
+  // if card was small, make every other card small and then make clicked card big
+    let cards = document.querySelectorAll('#card-box > *');
+    cards.forEach(card => card.children[0].classList.remove('opened'));
+    this.children[0].classList.add('opened');
+  }
 
+}
 function changeCardColor(e) {
   console.log(e);
   // retrieve background color

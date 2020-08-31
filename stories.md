@@ -2,9 +2,14 @@
 
 [x] I can see one big card - that's the main card.
 [x] I can see other smaller cards.
-[ ] When I click a smaller card, it becomes the only main card.
-[ ] I can click the main card and make it become smaller, with no main card in sight.
+[x] When I click a smaller card, it becomes the only main card. I can click the main card and make it become smaller, with no main card in sight.
+
 [x] There's a "new card" button that I can click. I can always see it.
+
+[ ] When I click the "new card" button it shows a card on the center of my screen 
+[x] ...with fields to complete. 
+[x] ...it has a "save" button
+[x] ... and 'title' and 'type' are mandatory fields. 
 
 [x] Book cards have the following fields:
 - title
@@ -27,11 +32,6 @@
 [x] There's a little bin icon in each card 
 [ ] ...that I can click and it removes the card
 [ ] ...and it prompts for confirmation. (task at https://javascript.info/arrow-functions-basics)
-
-[ ] When I click the "new card" button it shows a card in the center of my screen 
-[x] ...with fields to complete. 
-[x] ...it has a "save" button
-[x] ... and 'title' and 'type' are mandatory fields. 
 
 (how to make user input safe?)
 
