@@ -96,7 +96,7 @@ nav {
   border-radius: 0.2em;
   transition: 0.5s;
   display: grid;
-  grid-template-rows: auto minmax(40%, 1fr) auto;
+  grid-template-rows: 0 auto minmax(40%, 1fr) auto;
 }
 .opened { /* added on card-content level */
   width: 24rem;
@@ -107,7 +107,6 @@ nav {
 /* CARD BUTTONS */
 .card-buttons {
   position: relative;
-  display: none; /* temporary */
 }
 .card-btn {
   background-color: #FFFFFF;
@@ -120,6 +119,7 @@ nav {
 }
 .card:hover .card-btn {
   opacity: .5;
+  transition: 0.2s;
 }
 .card-btn:hover {
   background-color: rgb(252, 235, 203);
