@@ -1,13 +1,13 @@
-# files related to testing
+# ignore files related to testing
 main*.js
 test.html
 
 # but not the main js file
 !main.js
 
-# 
-stories.md
+# other files to ignore
 .DS_Store
 autoresize.txt
 icon-edit2.png
 icon-edit3.png
+palette.html
