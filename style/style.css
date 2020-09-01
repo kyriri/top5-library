@@ -269,6 +269,35 @@ input:checked + .slider:before {
 .checked { opacity: 50%; }
 
 /* NEW CARD FORM */
+.new-card-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hidden {
+  display: none;
+}
+.blurred { /* applied to #whole-page */
+  filter: blur(.6rem);
+}
+.form {
+  height: 75vh;
+  width: calc(75vh / 4 * 3);
+  font-size: calc(75vh / 20); /* same proportion of small cards: font is 1rem and height is 20rem */
+  background-color: #FFFFFF;
+  overflow: auto;
+  padding: 0.8em;
+  border: #CCCCCC solid .4em;
+  border-radius: .8em;
+  transition: 0.5s;
+}
+.form-head {}
+.form-body {}
 .form-field {
   display: flex;
   flex-direction: row;

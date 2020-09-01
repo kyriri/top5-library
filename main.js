@@ -1,6 +1,18 @@
 // document.getElementsByTagName('p')[1].innerHTML = 'Galadriel';
 
-const catalog = sample;
+const catalog = sampleLibrary;
+
+// make new card form appear on click
+document.getElementById('add').addEventListener('click', show_or_hideNewCardForm);
+
+// make new card form disappear with cancel button
+document.getElementById('form-cancel-btn').addEventListener('click', show_or_hideNewCardForm);
+
+
+function show_or_hideNewCardForm() {
+  document.getElementById('new-card-form').classList.toggle('hidden');
+  document.getElementById('whole-page').classList.toggle('blurred');
+}
 
 function createCard(index) {
   let cardColor = catalog[index].type;
@@ -90,6 +102,7 @@ function renderCards() {
   let toggleButtons = document.querySelectorAll('.switch > input');
   toggleButtons.forEach(card => card.addEventListener('change', changeCardColor));
 }
+
 function changeCardSize() {
   // if card was big, make it small
   if (this.children[0].classList.contains('opened')) {
@@ -100,8 +113,8 @@ function changeCardSize() {
     cards.forEach(card => card.children[0].classList.remove('opened'));
     this.children[0].classList.add('opened');
   }
-
 }
+
 function changeCardColor(e) {
   console.log(e);
   // retrieve background color
@@ -114,7 +127,7 @@ function changeCardColor(e) {
 }
 
 // make nav bar sticky onscroll
-// adapted from: https://www.w3schools.com/howto/howto_js_sticky_header.asp
+// (adapted from: https://www.w3schools.com/howto/howto_js_sticky_header.asp)
 let header = document.getElementsByTagName("nav")[0];
 let sticky = header.offsetTop;
 window.onscroll = () => window.pageYOffset > sticky ? 

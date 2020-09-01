@@ -2,7 +2,7 @@
 
 // sample library for development purposes
 
-const sample = [
+const sampleLibrary = [
   {
     type: `book`,
     title: `Colorless Tsukuru Tazaki and his years of pilgrimage`,

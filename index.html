@@ -6,115 +6,122 @@
     <link rel='stylesheet' type='text/css' href='./style/style.css'>
     <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">  </head>
   <body>
-    <header>
-      <h1>Some witty name here</h1>
-      <h2>some description to confuse people what this site is about</h2>
-    </header>
-    <nav class='button-panel'>
-      <button class='header-btn' type='button'>Sort</button>
-      <button class='header-btn' type='button'>Filter</button>
-      <button class='header-btn' type='button'>Search</button>
-      <button class='header-btn' type='button'>Add card</button>
-    </nav>
-    <main id='card-box'>
-      <article class='card'>
-        Something went wrong... the script is not loading any data!
-      </article>
-
-      <article class='card'>
-        <div class='card-content opened'>
-          <div class='card-head'>
-            New card
-          </div>
-          <div class='card-body'>
-
-            <div class='form-field'>
-              <label class='tag' for='title'>Title</label>
-              <span class='required'>*</span>
-              <input type='text' id='form-title' name='title' placeholder='Romeo and Juliet' required>
-            </div>
-            <br>
-
-            <div class='form-field'>
-              <label class='tag' for='type'>Type</label>
-              <span class='required'>*</span>
-              <input type='text' list='types' id='form-type' name='type' placeholder='play' required>
-              <datalist id='types'>
-                <option>album</option>
-                <option>book</option>
-                <option>movie</option>
-                <option>play</option>
-                <option>series</option>
-              </datalist>
-            </div>
-            <br>
-
-            <div class='form-field'>
-              <label class='tag' for='author'>Author</label> 
-              <input type='text' id='form-author' name='author' placeholder='William Shakespeare'>
-            </div>
-            <br>
-
-            <label class='tag'>Already read/seen?</label> 
-            <input type='checkbox' id='form-read' name='read'><br><br>
-
-            <div class='form-field'>
-              <label class='tag'>Category</label> 
-              <input type='text' list='categories' id='form-category' name='category' placeholder='classic'>
-              <datalist id='categories'>
-                <option>beach read</option>
-                <option>biography</option>
-                <option>classic</option>
-                <option>comedy</option>
-                <option>detective</option>
-                <option>documentary</option>
-                <option>drama</option>
-                <option>musical</option>
-                <option>non-fiction</option>
-                <option>romance</option>
-                <option>sci-fi</option>
-                <option>thriller</option>
-                <option>technical</option>
-                <option>travel</option>
-              </datalist>
-            </div>
-            <br>
-
-            <div class='form-field'>
-              <label class='tag'>Original language</label> 
-              <input type='text' list='languages' id='form-language' name='language' placeholder='English'>
-              <datalist id='languages'>
-                <option>English</option>
-                <option>Japanese</option>
-                <option>Spanish</option>
-              </datalist>
-            </div>
-            <br>
-            <label class='tag'>Comments</label><BR>
-            <textarea type='text' id='form-comment' name='comment' placeholder='(Why are you interested in this? Where have you first heard of it?)'></textarea>
-            <br><br>
-
-            <label class='tag'>Quotations</label><BR> 
-            <textarea type='text' id='form-quotes' name='quotes' placeholder='(Passages to remember, a favorite scene, etc)'></textarea>
-
-          </div>
-          <div class='card-foot'>
-            <input type='submit' value='Save'>
-          </div>
+    <section id='whole-page' class=''>
+      <header>
+        <h1>Some witty name here</h1>
+        <h2>some description to confuse people what this site is about</h2>
+      </header>
+      <nav class='button-panel'>
+        <button class='header-btn' id='sort' type='button'>Sort</button>
+        <button class='header-btn' id='filter' type='button'>Filter</button>
+        <button class='header-btn' id='search' type='button'>Search</button>
+        <button class='header-btn' id='add' type='button'>Add card</button>
+      </nav>
+      <main>
+        <div id='card-box'>
+          <article class='card'>
+            Something went wrong... the script is not loading any data!
+          </article>
         </div>
-      </article>
-    </main>
-    <footer>
-      <a href='https://github.com/kyriri' target='_blank'>kyriri</a> 
-        @ 2020 quarentine
-      <BR>projects: 
-        <a href='https://github.com/kyriri/top4-calculator'>previous</a>
-        | 
-        <a href=''>next</a>
-        <a href=''>
-          <svg class='github-mark' viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-        </a>
-    </footer>
+      </main>
+      <footer>
+        <a href='https://github.com/kyriri' target='_blank'>kyriri</a> 
+          @ 2020 quarentine
+        <BR>projects: 
+          <a href='https://github.com/kyriri/top4-calculator'>previous</a>
+          | 
+          <a href=''>next</a>
+          <a href=''>
+            <svg class='github-mark' viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+          </a>
+      </footer>
+    </section>
+
+  <!-- new card form -->  
+    <section id='new-card-form' class='new-card-form hidden'>
+      <div class='form'>
+        <div class='form-head'>
+          New card
+        </div>
+        <div class='form-body'>
+
+          <div class='form-field'>
+            <label class='tag' for='title'>Title</label>
+            <span class='required'>*</span>
+            <input type='text' id='form-title' name='title' placeholder='Romeo and Juliet' required>
+          </div>
+          <br>
+
+          <div class='form-field'>
+            <label class='tag' for='type'>Type</label>
+            <span class='required'>*</span>
+            <input type='text' list='types' id='form-type' name='type' placeholder='play' required>
+            <datalist id='types'>
+              <option>album</option>
+              <option>book</option>
+              <option>movie</option>
+              <option>play</option>
+              <option>series</option>
+            </datalist>
+          </div>
+          <br>
+
+          <div class='form-field'>
+            <label class='tag' for='author'>Author</label> 
+            <input type='text' id='form-author' name='author' placeholder='William Shakespeare'>
+          </div>
+          <br>
+
+          <label class='tag'>Already read/seen?</label> 
+          <input type='checkbox' id='form-read' name='read'><br><br>
+
+          <div class='form-field'>
+            <label class='tag'>Category</label> 
+            <input type='text' list='categories' id='form-category' name='category' placeholder='classic'>
+            <datalist id='categories'>
+              <option>beach read</option>
+              <option>biography</option>
+              <option>classic</option>
+              <option>comedy</option>
+              <option>detective</option>
+              <option>documentary</option>
+              <option>drama</option>
+              <option>musical</option>
+              <option>non-fiction</option>
+              <option>romance</option>
+              <option>sci-fi</option>
+              <option>thriller</option>
+              <option>technical</option>
+              <option>travel</option>
+            </datalist>
+          </div>
+          <br>
+
+          <div class='form-field'>
+            <label class='tag'>Original language</label> 
+            <input type='text' list='languages' id='form-language' name='language' placeholder='English'>
+            <datalist id='languages'>
+              <option>English</option>
+              <option>Japanese</option>
+              <option>Spanish</option>
+            </datalist>
+          </div>
+          <br>
+          <label class='tag'>Comments</label><BR>
+          <textarea type='text' id='form-comment' name='comment' placeholder='(Why are you interested in this? Where have you first heard of it?)'></textarea>
+          <br><br>
+
+          <label class='tag'>Quotations</label><BR> 
+          <textarea type='text' id='form-quotes' name='quotes' placeholder='(Passages to remember, a favorite scene, etc)'></textarea>
+
+        </div>
+        <div class='card-foot'>
+          <input id='form-cancel-btn' type='button' value='Cancel'>
+          <input id='form-submit-btn' type='submit' value='Save'>
+        </div>
+      </div>
+    </section>
+
     <script src='sample-library.js'></script>
     <script src='main.js'></script>
   </body>
