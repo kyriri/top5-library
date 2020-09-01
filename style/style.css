@@ -78,24 +78,30 @@ nav {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-evenly;
-  transition: 0s; /* else there's a bounce effect on the sticky bar */
+  transition: 0s; /* otherwise there's a bounce effect on the sticky bar */
 }
 .card {
   background-color: #CCCCCC;
+  width: 15rem;
+  height: 20rem;
   padding: 0.5em;
   margin: 0.5em;
   border-radius: 0.4em;
   box-shadow: 0 .4em .8em 0 rgba(0,0,0,0.2);
   transition: 0.3s;
 }
+.opened { /* applied on .card level */
+  font-size: 1.5rem;
+  width: calc(15rem * 1.5);
+  height: calc(20rem * 1.5);
+}
 .card:hover {
   box-shadow: 0 .8em 1.6em 0 rgba(0,0,0,0.2);
 }
 .card-content {
-  width: 15rem;
-  height: 20rem;
-  background-color: #FFFFFF;
+  height: calc(100% - 2 * .8em); /* substracts padding */
   padding: 0.8em;
+  background-color: #FFFFFF;
   border-radius: 0.2em;
   transition: 0.5s;
   display: grid;
@@ -106,7 +112,6 @@ nav {
   height: 32rem;
   font-size: 1.5rem;
 }
-
 /* CARD BUTTONS */
 .card-buttons {
   position: relative;
@@ -149,7 +154,6 @@ nav {
 
 /* CARD BODY */
 .card-body {
-  padding-top: .8em;
   overflow: auto;
 }
 .tag {
@@ -197,7 +201,7 @@ nav {
 .card-status {
   border-top: .1em solid lightgray;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-transform: uppercase;
   color: lightgray;
   padding: .4em .3em .15em 0;

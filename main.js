@@ -105,13 +105,13 @@ function renderCards() {
 
 function changeCardSize() {
   // if card was big, make it small
-  if (this.children[0].classList.contains('opened')) {
-    this.children[0].classList.remove('opened');
+  if (this.classList.contains('opened')) {
+    this.classList.remove('opened');
   } else {
   // if card was small, make every other card small and then make clicked card big
     let cards = document.querySelectorAll('#card-box > *');
-    cards.forEach(card => card.children[0].classList.remove('opened'));
-    this.children[0].classList.add('opened');
+    cards.forEach(card => card.classList.remove('opened'));
+    this.classList.add('opened');
   }
 }
 
