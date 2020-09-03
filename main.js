@@ -17,6 +17,21 @@ Work.prototype.toggleStatus = function() {
   this.status === 'false' ? 'true' : 'false';
 };
 
+function addCard() {
+  let item = new Work(
+    document.getElementById('form-title').value, 
+    document.getElementById('form-type').value, 
+    document.getElementById('form-author').value, 
+    document.getElementById('form-status').value, 
+    document.getElementById('form-category').value, 
+    document.getElementById('form-language').value, 
+    document.getElementById('form-comment').value, 
+    document.getElementById('form-quotes').value, 
+  );
+  catalog.unshift(item);
+  renderDeck();
+  show_or_hideNewCardForm();
+}
 function show_or_hideNewCardForm() {
   document.querySelector('.new-card-screen').classList.toggle('hidden');
   document.getElementById('whole-page').classList.toggle('blurred');
@@ -153,5 +168,9 @@ document.getElementById('form-cancel-btn').addEventListener('click', show_or_hid
 document.querySelector('.new-card-screen').addEventListener('click', e => {
   if (!document.querySelector('.form').contains(e.target)) show_or_hideNewCardForm()
 });
+
+// save new card
+document.getElementById('form-submit-btn').addEventListener('click', addCard);
+
 
 renderDeck();
