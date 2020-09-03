@@ -89,7 +89,7 @@ function chooseStatusWording(type) {
   return wording;
 }
 
-function renderCards() {
+function renderDeck() {
   document.getElementById('card-box').innerHTML = '';
   for (let i = 0; i < catalog.length; i += 1)
     document.getElementById('card-box').innerHTML += createCard(i);
@@ -134,4 +134,4 @@ window.onscroll = () => window.pageYOffset > sticky ?
   header.classList.add('sticky') : header.classList.remove('sticky');
 
 
-renderCards();
+renderDeck();
