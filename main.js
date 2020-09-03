@@ -99,6 +99,8 @@ function chooseStatusWording(type) {
   let wording;
   switch(type) {
     case 'album':
+    case 'song':
+    case 'music':
       wording = 'listened';
       break;
     case 'book':
