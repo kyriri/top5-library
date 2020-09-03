@@ -107,48 +107,36 @@ nav {
   display: grid;
   grid-template-rows: 0 auto minmax(40%, 1fr) auto;
 }
-.opened { /* added on card-content level */
-  width: 24rem;
-  height: 32rem;
-  font-size: 1.5rem;
-}
+
 /* CARD BUTTONS */
-.card-buttons {
+.card-buttons div {
+  float: right;
   position: relative;
+  width: 1.5em;
 }
-.card-btn {
-  background-color: #FFFFFF;
-  opacity: 0;
-  padding: .1em;
+.card-buttons button {
+  background-color: #f0f0f0;
+  padding: 0;
   margin: 0;
   border: none;
-  border-radius: .2em;
-  position: absolute;
+  border-radius: .3em;
 }
-.card:hover .card-btn {
-  opacity: .5;
-  transition: 0.2s;
+.card-buttons button:first-child {
+  margin-bottom: 30%;
 }
-.card-btn:hover {
+.card-buttons button:hover {
   background-color: rgb(252, 235, 203);
 }
 /* imgs source: https://www.iconarchive.com/ */
-.card-btn img {
-  height: 1.2em; /* why u no grow ?? */
+.card-buttons button img {
+  width: 100%;
 } 
-.card-btn.edit {
-  top: 0;
-  right: 0;
-}
-.card-btn.delete {
-  top: 1.7em;
-  right: 0;
-}
 
 /* CARD HEAD */
 .card-head {
   font-size: 1.6em;
   font-weight: bold;
+  width: calc(100% - .8em);
   overflow: auto;
 }
 

@@ -20,8 +20,10 @@ function createCard(index) {
   <article class='card ${cardColor}'>
     <div class='card-content ${index === 0 ? '' : ''}'>
       <div class='card-buttons'>
-        <button class='card-btn edit' type='button'><img src='./style/icon-edit.png' alt='edit card'></button>
-        <button class='card-btn delete' type='button'><img src='./style/icon-trash.png' alt='delete card'></button>
+        <div>
+          <button class='edit' type='button'><img src='./style/icon-edit.png' alt='edit card'></button>
+          <button class='delete' type='button'><img src='./style/icon-trash.png' alt='delete card'></button>
+        </div>
       </div>
       <div class='card-head'>${catalog[index].title}</div>
       <div class='card-body'>
