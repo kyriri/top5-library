@@ -16,7 +16,6 @@ function Work(title, type, author, status, category, language, comment, quotes) 
 Work.prototype.toggleStatus = function() {
   this.status === 'false' ? 'true' : 'false';
 };
-
 function sanitizeUserInput(input) {
   return input
     .trim()
@@ -45,11 +44,16 @@ function addCard() {
   show_or_hideNewCardForm();
   form.reset();
 }
+function removeCard(e) {
+  console.log(e);
+  const index = e.target.dataset.index;
+  catalog.splice(index, 1);
+  renderDeck();
+}
 function show_or_hideNewCardForm() {
   document.querySelector('.new-card-screen').classList.toggle('hidden');
   document.getElementById('whole-page').classList.toggle('blurred');
 }
-
 function createCard(index) {
   let cardColor = catalog[index].type;
   return `
@@ -57,8 +61,8 @@ function createCard(index) {
     <div class='card-content ${index === 0 ? '' : ''}'>
       <div class='card-buttons'>
         <div>
-          <button class='edit' type='button'><img src='./style/icon-edit.png' alt='edit card'></button>
-          <button class='delete' type='button'><img src='./style/icon-trash.png' alt='delete card'></button>
+          <button class='edit' type='button'><img src='./style/icon-edit.png' data-index='${index}' alt='edit card'></button>
+          <button class='delete' type='button'><img src='./style/icon-trash.png' data-index='${index}' alt='delete card'></button>
         </div>
       </div>
       <div class='card-head'>${catalog[index].title}</div>
@@ -106,7 +110,6 @@ function createCard(index) {
     </div>
   </article>`;
 }
-
 function chooseStatusWording(type) {
   let wording;
   switch(type) {
@@ -128,7 +131,6 @@ function chooseStatusWording(type) {
   }
   return wording;
 }
-
 function renderDeck() {
   document.getElementById('card-box').innerHTML = '';
   for (let i = 0; i < catalog.length; i += 1)
@@ -141,8 +143,11 @@ function renderDeck() {
   // make cards change color when toggle button is clicked
   let toggleButtons = document.querySelectorAll('.switch > input');
   toggleButtons.forEach(card => card.addEventListener('change', changeCardColor));
-}
 
+  // activate card delete buttons
+  let deleteButtons = document.querySelectorAll('.delete');
+  deleteButtons.forEach(button => button.addEventListener('click', removeCard));
+}
 function changeCardSize() {
   // if card was big, make it small
   if (this.classList.contains('opened')) {
@@ -154,7 +159,6 @@ function changeCardSize() {
     this.classList.add('opened');
   }
 }
-
 function changeCardColor(e) {
   console.log(e);
   // retrieve background color
@@ -184,8 +188,7 @@ document.querySelector('.new-card-screen').addEventListener('click', e => {
   if (!document.getElementsByTagName('form')[0].contains(e.target)) show_or_hideNewCardForm()
 });
 
-// save new card
+// activate save new card button
 document.getElementById('form-submit-btn').addEventListener('click', addCard);
-
 
 renderDeck();

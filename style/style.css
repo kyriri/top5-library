@@ -127,6 +127,9 @@ nav {
 .card-buttons button:hover {
   background-color: rgb(252, 235, 203);
 }
+.card-buttons button:active, .card-buttons button:focus {
+  background-color: orange;
+}
 /* imgs source: https://www.iconarchive.com/ */
 .card-buttons button img {
   width: 100%;
