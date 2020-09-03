@@ -17,21 +17,33 @@ Work.prototype.toggleStatus = function() {
   this.status === 'false' ? 'true' : 'false';
 };
 
+function sanitizeUserInput(input) {
+  return input
+    .trim()
+    .replace(/\&/g, '&amp;')
+    .replace(/\</g, '&#9001;')
+    .replace(/\>/g, '&#9002;');
+}
 function addCard() {
-  let item = new Work(
-    document.getElementById('form-title').value, 
-    document.getElementById('form-type').value, 
-    document.getElementById('form-author').value, 
-    document.getElementById('form-status').value, 
-    document.getElementById('form-category').value, 
-    document.getElementById('form-language').value, 
-    document.getElementById('form-comment').value, 
-    document.getElementById('form-quotes').value, 
-  );
+  const form = document.getElementsByTagName('form')[0];
+  const title = sanitizeUserInput(document.getElementById('form-title').value); 
+  const type = sanitizeUserInput(document.getElementById('form-type').value);
+  const author = sanitizeUserInput(document.getElementById('form-author').value); 
+  const status = document.getElementById('form-status');
+  const category = sanitizeUserInput(document.getElementById('form-category').value); 
+  const language = sanitizeUserInput(document.getElementById('form-language').value);
+  const comment = sanitizeUserInput(document.getElementById('form-comment').value);
+  const quotes = sanitizeUserInput(document.getElementById('form-quotes').value);
+
+  if (title === '' || type === '') {
+    form.scrollIntoView();
+    return;
+  }
+  const item = new Work(title, type, author, status, category, language, comment, quotes);
   catalog.unshift(item);
   renderDeck();
   show_or_hideNewCardForm();
-  document.getElementsByTagName('form')[0].reset();
+  form.reset();
 }
 function show_or_hideNewCardForm() {
   document.querySelector('.new-card-screen').classList.toggle('hidden');
@@ -169,7 +181,7 @@ document.getElementById('form-cancel-btn').addEventListener('click', show_or_hid
 
 // make new card form disappear by clicking outside it
 document.querySelector('.new-card-screen').addEventListener('click', e => {
-  if (!document.querySelector('.form').contains(e.target)) show_or_hideNewCardForm()
+  if (!document.getElementsByTagName('form')[0].contains(e.target)) show_or_hideNewCardForm()
 });
 
 // save new card

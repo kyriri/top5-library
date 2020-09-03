@@ -280,7 +280,7 @@ input:checked + .slider:before {
 .blurred { /* applied to #whole-page */
   filter: blur(.6rem);
 }
-.form {
+form {
   height: 75vh;
   width: calc(75vh / 4 * 3);
   font-size: calc(75vh / 20); /* same proportion of small cards: font is 1rem and height is 20rem */
