@@ -3,14 +3,18 @@
 const catalog = sampleLibrary;
 
 // make new card form appear on click
-document.getElementById('add').addEventListener('click', show_or_hideNewCardForm);
+document.getElementById('btn-add').addEventListener('click', show_or_hideNewCardForm);
 
 // make new card form disappear with cancel button
 document.getElementById('form-cancel-btn').addEventListener('click', show_or_hideNewCardForm);
 
+// make new card form disappear by clicking outside it
+document.querySelector('.new-card-screen').addEventListener('click', e => {
+  if (!document.querySelector('.form').contains(e.target)) show_or_hideNewCardForm()
+});
 
 function show_or_hideNewCardForm() {
-  document.getElementById('new-card-form').classList.toggle('hidden');
+  document.querySelector('.new-card-screen').classList.toggle('hidden');
   document.getElementById('whole-page').classList.toggle('blurred');
 }
 

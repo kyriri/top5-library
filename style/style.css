@@ -105,7 +105,7 @@ nav {
   border-radius: 0.2em;
   transition: 0.5s;
   display: grid;
-  grid-template-rows: 0 auto minmax(40%, 1fr) auto;
+  grid-template-rows: 0 auto minmax(35%, 1fr) auto;
 }
 
 /* CARD BUTTONS */
@@ -264,7 +264,7 @@ input:checked + .slider:before {
 .checked { opacity: 50%; }
 
 /* NEW CARD FORM */
-.new-card-form {
+.new-card-screen {
   position: fixed;
   top: 0;
   left: 0;
