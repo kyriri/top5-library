@@ -31,6 +31,7 @@ function addCard() {
   catalog.unshift(item);
   renderDeck();
   show_or_hideNewCardForm();
+  document.getElementsByTagName('form')[0].reset();
 }
 function show_or_hideNewCardForm() {
   document.querySelector('.new-card-screen').classList.toggle('hidden');
