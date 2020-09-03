@@ -2,16 +2,20 @@
 
 const catalog = sampleLibrary;
 
-// make new card form appear on click
-document.getElementById('btn-add').addEventListener('click', show_or_hideNewCardForm);
-
-// make new card form disappear with cancel button
-document.getElementById('form-cancel-btn').addEventListener('click', show_or_hideNewCardForm);
-
-// make new card form disappear by clicking outside it
-document.querySelector('.new-card-screen').addEventListener('click', e => {
-  if (!document.querySelector('.form').contains(e.target)) show_or_hideNewCardForm()
-});
+function Work(title, type, author, status, category, language, comment, quotes) {
+  this.title = title ?? ''
+  this.type = type ?? '' 
+  this.author = author ?? '' 
+  this.status = status || false;
+  this.category = category ?? ''
+  this.language = language ?? ''
+  this.comment = comment ?? ''
+  this.quotes = quotes ?? ''
+  this.additionTime = Date.now()
+}
+Work.prototype.toggleStatus = function() {
+  this.status === 'false' ? 'true' : 'false';
+};
 
 function show_or_hideNewCardForm() {
   document.querySelector('.new-card-screen').classList.toggle('hidden');
@@ -139,5 +143,15 @@ let sticky = header.offsetTop;
 window.onscroll = () => window.pageYOffset > sticky ? 
   header.classList.add('sticky') : header.classList.remove('sticky');
 
+// make new card form appear on click
+document.getElementById('btn-add').addEventListener('click', show_or_hideNewCardForm);
+
+// make new card form disappear with cancel button
+document.getElementById('form-cancel-btn').addEventListener('click', show_or_hideNewCardForm);
+
+// make new card form disappear by clicking outside it
+document.querySelector('.new-card-screen').addEventListener('click', e => {
+  if (!document.querySelector('.form').contains(e.target)) show_or_hideNewCardForm()
+});
 
 renderDeck();

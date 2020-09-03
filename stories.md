@@ -6,7 +6,7 @@
 
 [x] There's a "new card" button that I can click. I can always see it.
 
-[ ] When I click the "new card" button it shows a card on the center of my screen 
+[x] When I click the "new card" button it shows a card on the center of my screen 
 [x] ...with fields to complete. 
 [x] ...it has a "save" button
 [x] ... and 'title' and 'type' are mandatory fields. 
