@@ -45,7 +45,6 @@ function addCard() {
   form.reset();
 }
 function removeCard(e) {
-  console.log(e);
   const index = e.target.dataset.index;
   catalog.splice(index, 1);
   renderDeck();
@@ -119,6 +118,7 @@ function chooseStatusWording(type) {
       wording = 'listened';
       break;
     case 'book':
+    case 'comics':
       wording = 'read';
       break;
     case 'movie':
@@ -137,16 +137,16 @@ function renderDeck() {
     document.getElementById('card-box').innerHTML += createCard(i);
   
   // make cards change size on click
-  let cards = document.querySelectorAll('#card-box > *');
-  cards.forEach(card => card.addEventListener('click', changeCardSize));
+  document.querySelectorAll('#card-box > *')
+    .forEach(card => card.addEventListener('click', changeCardSize));
 
   // make cards change color when toggle button is clicked
-  let toggleButtons = document.querySelectorAll('.switch > input');
-  toggleButtons.forEach(card => card.addEventListener('change', changeCardColor));
+  document.querySelectorAll('.switch > input')
+    .forEach(card => card.addEventListener('change', changeCardColor));
 
   // activate card delete buttons
-  let deleteButtons = document.querySelectorAll('.delete');
-  deleteButtons.forEach(button => button.addEventListener('click', removeCard));
+  document.querySelectorAll('.delete')
+    .forEach(button => button.addEventListener('click', removeCard));
 }
 function changeCardSize() {
   // if card was big, make it small
@@ -178,17 +178,21 @@ window.onscroll = () => window.pageYOffset > sticky ?
   header.classList.add('sticky') : header.classList.remove('sticky');
 
 // make new card form appear on click
-document.getElementById('btn-add').addEventListener('click', show_or_hideNewCardForm);
+document.getElementById('btn-add')
+  .addEventListener('click', show_or_hideNewCardForm);
 
 // make new card form disappear with cancel button
-document.getElementById('form-cancel-btn').addEventListener('click', show_or_hideNewCardForm);
+document.getElementById('form-cancel-btn')
+  .addEventListener('click', show_or_hideNewCardForm);
 
 // make new card form disappear by clicking outside it
-document.querySelector('.new-card-screen').addEventListener('click', e => {
-  if (!document.getElementsByTagName('form')[0].contains(e.target)) show_or_hideNewCardForm()
-});
+document.querySelector('.new-card-screen')
+  .addEventListener('click', e => {
+    if (!document.getElementsByTagName('form')[0].contains(e.target)) show_or_hideNewCardForm()
+  });
 
 // activate save new card button
-document.getElementById('form-submit-btn').addEventListener('click', addCard);
+document.getElementById('form-submit-btn')
+  .addEventListener('click', addCard);
 
 renderDeck();

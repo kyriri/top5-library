@@ -23,14 +23,16 @@
 [ ] ...plus any custom value already on the database.
 
 [x] The cards have a read status toggle button 
-[ ] ...and cards have different colors according to this status.
+[ ] ...and cards have different colors according to this status
+[ ] ...and it updates the status and color automatically
 
 [x] In the main card, all non-empty fields are showing, so it stretches down, but up to a limit, after which I can scroll the content.
 [x] With uber long titles, it scrolls down as well.
 [x] With super big zooming, I can still read the cards.
 
 [x] There's a little bin icon in each card 
-[ ] ...that I can click and it removes the card
+[ ] ...that appears on hover
+[x] ...that I can click and it removes the card
 [ ] ...and it prompts for confirmation. (task at https://javascript.info/arrow-functions-basics)
 
 (how to make user input safe?)
