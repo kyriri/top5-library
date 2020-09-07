@@ -56,7 +56,7 @@ function show_or_hideNewCardForm() {
 function createCard(index) {
   let cardColor = catalog[index].type;
   return `
-  <article class='card ${cardColor}'>
+  <article class='card ${cardColor}' data-index='${index}'>
     <div class='card-content ${index === 0 ? '' : ''}'>
       <div class='card-buttons'>
         <div>
@@ -98,16 +98,24 @@ function createCard(index) {
         `) : ''}
       </div>
       <div class='card-foot'>
-        <div class='card-status'>${catalog[index].type} &nbsp;-&nbsp;  ${catalog[index].read ? '' : 'Not'} ${chooseStatusWording(catalog[index].type)}</div>
+        <div class='card-status' data-index='${index}'>${statusText(catalog[index].type, catalog[index].read)}</div>
         <div class='toggle-button'>
           <label class='switch'>
-            <input type='checkbox' ${catalog[index].read ? 'checked' : ''}>
+            <input type='checkbox' data-index='${index}' ${catalog[index].read ? 'checked' : ''}>
             <span class='slider ${cardColor}'></span>
           </label>          
         </div>
       </div>
     </div>
   </article>`;
+}
+function statusText(type, status){
+  return (`
+    ${type} 
+    &nbsp;-&nbsp;  
+    ${status ? '' : 'Not'} 
+    ${chooseStatusWording(type)}
+  `)
 }
 function chooseStatusWording(type) {
   let wording;
@@ -142,7 +150,7 @@ function renderDeck() {
 
   // make cards change color when toggle button is clicked
   document.querySelectorAll('.switch > input')
-    .forEach(card => card.addEventListener('change', changeCardColor));
+    .forEach(card => card.addEventListener('change', updateCardColor));
 
   // activate card delete buttons
   document.querySelectorAll('.delete')
@@ -159,15 +167,46 @@ function changeCardSize() {
     this.classList.add('opened');
   }
 }
-function changeCardColor(e) {
-  console.log(e);
-  // retrieve background color
-  let element = e.originalTarget.nextElementSibling;
-  console.log(`color: ${getComputedStyle(element).backgroundColor}`);
-  // if read == true, increase card lightness by the equivalent of 50% alpha
-  // if read == false, decrease card lightness by the same measure
-  // convert from rgba to rgb (if needed)
-  // change background color (card and toggle button)
+function updateCardColor(e) {
+  const newStatus = this.checked;
+  const index = e.target.dataset.index;
+  const card = document.querySelector(`article[data-index='${index}']`);
+  const cardStatus = document.querySelector(`article[data-index='${index}'] div[class='card-status']`);
+  const toggleButton = e.originalTarget.nextElementSibling;
+  const toggleButtonColor = getComputedStyle(toggleButton).backgroundColor.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i);
+  
+  if (newStatus == true) {
+    const newColor = dimColor(toggleButtonColor);
+    card.style.backgroundColor = newColor;
+  } else {
+    card.removeAttribute('style');
+  }
+  catalog[index].read = newStatus;
+  cardStatus.innerHTML = `${statusText(catalog[index].type, catalog[index].read)}`;
+}
+function dimColor(currentColor) {
+  const alpha = 0.4;
+  let oldColor = {
+    R: currentColor[1] / 255,
+    G: currentColor[2] / 255,
+    B: currentColor[3] / 255,
+  };
+  let newColor = {
+    R: 0,
+    G: 0,
+    B: 0,
+  };
+  if (currentColor) {
+    newColor.R = (1 - alpha) + alpha * oldColor.R;
+    newColor.G = (1 - alpha) + alpha * oldColor.G;
+    newColor.B = (1 - alpha) + alpha * oldColor.B;
+    newColor.R = Math.floor(newColor.R * 255);
+    newColor.G = Math.floor(newColor.G * 255);
+    newColor.B = Math.floor(newColor.B * 255);
+    return `rgb(${newColor.R}, ${newColor.G}, ${newColor.B})`;
+  } else { // (fallback if color parsing fails)
+    return '#CCCCCC'
+  } 
 }
 
 // make nav bar sticky onscroll
