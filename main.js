@@ -102,7 +102,7 @@ function createCard(index) {
         <div class='toggle-button'>
           <label class='switch'>
             <input type='checkbox' data-index='${index}' ${catalog[index].read ? 'checked' : ''}>
-            <span class='slider ${cardColor}'></span>
+            <span class='slider ${cardColor}' id='toggle${index}'></span>
           </label>          
         </div>
       </div>
@@ -172,9 +172,8 @@ function updateCardColor(e) {
   const index = e.target.dataset.index;
   const card = document.querySelector(`article[data-index='${index}']`);
   const cardStatus = document.querySelector(`article[data-index='${index}'] div[class='card-status']`);
-  const toggleButton = e.originalTarget.nextElementSibling;
-  const toggleButtonColor = getComputedStyle(toggleButton).backgroundColor.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i);
-  
+  const toggleButton = document.getElementById(`toggle${index}`);
+  const toggleButtonColor = getComputedStyle(toggleButton).backgroundColor.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i)[0];
   if (newStatus == true) {
     const newColor = dimColor(toggleButtonColor);
     card.style.backgroundColor = newColor;
@@ -184,19 +183,36 @@ function updateCardColor(e) {
   catalog[index].read = newStatus;
   cardStatus.innerHTML = `${statusText(catalog[index].type, catalog[index].read)}`;
 }
-function dimColor(currentColor) {
+function dimColor(inputColor) {
   const alpha = 0.4;
-  let oldColor = {
-    R: currentColor[1] / 255,
-    G: currentColor[2] / 255,
-    B: currentColor[3] / 255,
-  };
-  let newColor = {
-    R: 0,
-    G: 0,
-    B: 0,
-  };
-  if (currentColor) {
+  let parsedColor;
+  let m;
+  // parse colors given in 6-digit hex format
+  m = inputColor.match(/^#([0-9a-f]{6})$/i)[1];
+    if (m) {
+      parsedColor = [
+        parseInt(m.substr(0,2),16),
+        parseInt(m.substr(2,2),16),
+        parseInt(m.substr(4,2),16)
+      ];
+    }
+  // parse colors given in rgb format
+  m = inputColor.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i);
+  if (m) {
+    parsedColor = [m[1],m[2],m[3]];
+  }
+
+  if (parsedColor) {
+    const oldColor = {
+      R: parsedColor[0] / 255,
+      G: parsedColor[1] / 255,
+      B: parsedColor[2] / 255,
+    };
+    let newColor = {
+      R: 0,
+      G: 0,
+      B: 0,
+    };
     newColor.R = (1 - alpha) + alpha * oldColor.R;
     newColor.G = (1 - alpha) + alpha * oldColor.G;
     newColor.B = (1 - alpha) + alpha * oldColor.B;
